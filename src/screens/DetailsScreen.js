@@ -8,7 +8,6 @@ class DetailsScreen extends React.Component {
 
     constructor(props){
         super(props);
-        //
         this.state = {
             countryName : this.props.route.params.countryName,
             showLoader:true
@@ -16,9 +15,7 @@ class DetailsScreen extends React.Component {
     }
 
     componentDidMount(){
-        //this.setState({showLoader:true});
         this.props.dispatch(GET_COUNTRY_DETAILS(this.state.countryName));
-        //this.setState({showLoader:false});
     }
 
     render(){
@@ -61,7 +58,6 @@ class DetailsScreen extends React.Component {
 }
 
 mapStateToProps =(state)=>{
-    
     return {
         countryDetails : state.app.countryDetails
     }

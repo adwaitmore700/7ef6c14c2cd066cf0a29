@@ -6,7 +6,6 @@ export const GET_COUNTRY_DETAILS = (countryName)=>{
     return async (dispatch)=>{
         try {
             let countryDetails = await getCountryDetails(countryName);
-            
             if(countryDetails){
                 dispatch({
                     type:REDUX_CONSTANTS.GET_COUNTRY_DETAILS,
@@ -16,7 +15,7 @@ export const GET_COUNTRY_DETAILS = (countryName)=>{
             }
             else{
                 //handle
-                return false;
+                return true;
             }
         } catch (error) {
             return false;

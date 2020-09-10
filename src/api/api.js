@@ -1,10 +1,10 @@
+import {URLS} from '../utils/constants';
 import axios from 'axios';
 
 export const getCountryDetails = async (countryName)=>{
     try {
-        const response = await axios.get(`https://restcountries.eu/rest/v2/name/${countryName}`);
+        const response = await axios.get(`${URLS.COUNTRY_API_BASE_URL}${countryName}`);
         if(response && response.data){
-            
             return {
                 capital:response.data[0].capital,
                 population:response.data[0].population,
@@ -22,9 +22,8 @@ export const getCountryDetails = async (countryName)=>{
 
 export const getWeatherDetails = async (cityName)=>{
     try {
-        const response = await axios.get(`http://api.weatherstack.com/current?access_key=6e7ffc24b67081377ad8c648b547a8e3&query=${cityName}`);
+        const response = await axios.get(`${URLS.WEATHER_API_BASE_URL}${cityName}`);
         if(response && response.data){
-            
             return {
                 temperature:response.data.current.temperature,
                 weather_icon:response.data.current.weather_icons[0],

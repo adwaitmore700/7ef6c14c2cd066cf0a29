@@ -14,9 +14,7 @@ class WeatherDetailsScreen extends React.Component {
     }
 
     componentDidMount(){
-        //this.setState({showLoader:true});
         this.props.dispatch(GET_WEATHER_DETAILS(this.state.capital));
-        //this.setState({showLoader:false});
     }
 
     render(){
